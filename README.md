@@ -6,11 +6,11 @@ The scripts are designed for high-throughput optimization, leveraging heavy para
 
 ## 🚀 Overview
 
-- **Structural Types:** Laminated plates, stiffened panels (various configurations)
+- **Structural Types:** Laminated constant stiffness plates, stiffened panels (various configurations)
 - **Objectives:** Natural frequency maximization, weight minimization (multi-objective)
 - **Parallelization:** All evaluations run distributed via MATLAB's Parallel Toolbox
 - **Caching:** Caching/memoization to avoid redundant computation (DataHash-based)
-- **External Optimization:** Integrated with evolutionary algorithms (CEGA.exe) and test point patching tools (NoLayerPatchGA.exe)
+- **External Optimization:** Integrated with evolutionary algorithms (MOMCGP)
 - **Extensible:** Modular code structure, easy to adapt for new element layouts or objectives
 
 ---
@@ -19,14 +19,14 @@ The scripts are designed for high-throughput optimization, leveraging heavy para
 
 Each major code corresponds to a specific optimization scenario (different mesh, layout, or objective):
 
-| Script                         | Description                                                         |
-| ------------------------------ | ------------------------------------------------------------------- |
-| `case1_optimization.m`         | Multi-objective (frequency & weight) optimization for Case 1 panel  |
-| `case4_optimization.m`         | Single-objective frequency optimization for Case 4 panel            |
-| `caseX_optimization.m`         | (Your other two scripts—add custom descriptions as needed)          |
-| `DataHash.m`                   | Utility for fast hash-based memoization (required for caching)      |
-| `conn_caseX`, `nodes_caseX`    | Mesh connectivity & nodal coordinate data for each case             |
-| `CEGA.exe`, `NoLayerPatchGA.exe`| External tools: optimizer & patcher                                 |
+| Script                                         | Description                                                        |
+| ---------------------------------------------- | ------------------------------------------------------------------ |
+| `single_objective_parallel_solver.m`           | single-objective optimization for stiffened panel                  |
+| `multi_objective_parallel_solver.m`            | multi-objective  optimization for stiffened panel                  |
+| `highlevel_single_objective_parallel_solver.m` | highly efficient single-objective optimization for stiffened panel |
+| `highlevel_multi_objective_parallel_solver.m`  | highly efficient multi-objective optimization for stiffened panel  |
+| `DataHash.m`                                   | Utility for fast hash-based memoization (required for caching)     |
+| `CEGA.exe`                                     | External optimization algorithm: MOMCGP                            |
 
 ---
 
