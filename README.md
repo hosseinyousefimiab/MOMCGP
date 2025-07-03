@@ -1,9 +1,10 @@
 # Composite Plate Optimization with Parallelized SEM Framework
-
-Welcome!  
+ 
 This repository contains a set of advanced, production-level MATLAB codes for **parallelized multi-objective optimization of composite plates and stiffened panels** using the Spectral Element Method (SEM).  
 The scripts are designed for high-throughput optimization, leveraging heavy parallelization, intelligent batch/memoization strategies, and efficient coupling with external optimizers.
 
+`single_objective_parallel_solver.m` and `multi_objective_parallel_solver.m` can compete with Matlab's NS-GA II in computational time.
+`highlevel_single_objective_parallel_solver.m` and `highlevel_multi_objective_parallel_solver.m` show approximately 50% improvement in computational time comparting to NS-GA II.
 ## 🚀 Overview
 
 - **Structural Types:** Laminated constant stiffness plates, stiffened panels (various configurations)
