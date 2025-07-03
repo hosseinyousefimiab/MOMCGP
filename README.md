@@ -42,7 +42,7 @@ Each major code corresponds to a specific optimization scenario (different mesh,
    - Edit `num_cores` at the top of each script for your machine.
    - Start MATLAB and run your desired case script:
      ```matlab
-     run('case1_optimization.m')
+     run('single_objective_parallel_solver.m')
      ```
    - All logging will be saved to `optimization_parallel.log` and results in `Results.txt`.
 
